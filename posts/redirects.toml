@@ -1,0 +1,15 @@
+# Old post urls (the part after /post/) -> where the post lives now.
+# Only renames need an entry; a post moved to another dir is found by its
+# file name automatically.
+"1" = "coding/hello_world"
+"2" = "coding/mariadb_docker_periodic_backups"
+"3" = "coding/merge_sort_in_rust"
+"4" = "coding/linking_rust_module_with_c"
+"6" = "coding/handlebar_templates_with_axum"
+"7" = "coding/catching_termination_and_ctrl_c_signals_with_axum_and_axum_server"
+"8" = "coding/compile_time_lookups_in_c"
+"9" = "coding/building_kernel_modules_on_raspberry_pi"
+"10" = "coding/cross_compiling_rust_code"
+"11" = "coding/cross_compiling_c_code"
+"12" = "coding/changing_esp32_partition_map_for_rust"
+"13" = "coding/embassy_on_esp32"

@@ -1,10 +1,7 @@
 +++
 title = "Handlebar Templates With Axum"
-author ="Preston Garrison"
-category = "coding"
 summary = "A template for serving static HTML and Handlebar templates using Axum in Rust"
 cover_image_url = "/post_assets/Linking_Rust_Module_With_C/rustacean-flat-happy.png"
-draft = false
 creation_date = 2023-08-24T17:22:39Z
 modified_date = 2023-09-01T19:32:09Z
 +++

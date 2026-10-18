@@ -1,10 +1,6 @@
 +++
-title = "Catching Termination and Ctrl C signals with Axum and axum_server"
-author ="Preston Garrison"
-category = "coding"
 summary = "Catching Termination and Ctrl C signals with Axum and axum_server"
 cover_image_url = "/post_assets/Linking_Rust_Module_With_C/rustacean-flat-happy.png"
-draft = false
 creation_date = 2023-08-24T21:02:49Z
 modified_date = 2023-08-25T15:30:05Z
 +++

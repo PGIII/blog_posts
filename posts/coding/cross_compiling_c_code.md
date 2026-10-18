@@ -1,10 +1,7 @@
 +++
 title = "Cross Compiling C Code"
-author ="Preston Garrison"
-category = "coding"
 summary = "Cross Compiling C code for a Raspberry Pi Zero W using a prebuilt toolchain"
 cover_image_url = "/post_assets/256px-C_Programming_Language.svg.png"
-draft = false
 creation_date = 2023-09-01T15:49:14Z
 modified_date = 2023-09-01T15:57:13Z
 +++

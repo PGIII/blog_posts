@@ -1,5 +1,5 @@
 +++
-cover_image_url = "post_assets/rustacean-flat-happy.png"
+cover_image_url = "/post_assets/rustacean-flat-happy.png"
 +++
 
 # Implementing GitHub Webhooks in Rust With Axum

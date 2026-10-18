@@ -1,0 +1,135 @@
++++
+summary = "Implementing Merge Sort In Rust With Generics"
+cover_image_url = "/post_assets/Merge_Sort_In_Rust/rustacean-flat-happy.png"
+creation_date = 2023-07-15T01:13:49Z
+modified_date = 2023-07-16T20:04:19Z
++++
+## Merge Sort In Rust
+
+### What Is Merge Sort
+
+***
+
+Merge Sort is a divide-and-conquer sorting algorithim. This is done by splitting the list into 2 and then continously spliting those lists, until we end up with many 1 length lists. Which are then merged and return to be merged with the other splits. Merge sort is O(n log n)
+
+Merge Sort is good for large list sorting, but can be slower for smaller lists
+
+Quick note: rust actaully has sorting implemented as a trait, vectors can be sorted by calling .sort() on them.
+
+### Implementing Merge Sort With Generics, The Merge Part
+
+***
+
+Merge Sort can seperated into two functions. A merge function that takes two lists and merges them, sorting (in this case smallest to largest);
+And the main function its self, merge_sort, which will be recursivly called finally calling merge at the end.
+
+Merge compares two lists and takes the smaller value, moving to the next element in list that contained the smaller value.
+once a list is exhausted the rest of the other list is appended to the end of the out list, if both are exhausted then the out list is returned.
+Thanks to the Rust Trait system we can write this once as a generic implmentation and get it for all types that have the ParialOrd and Clone trait.
+ParitalOrd is needed for Comparing the values contained in the vector
+
+```rust
+fn merge<T>(list1: &Vec<T>, list2: &Vec<T>) -> Vec<T>
+where
+    T: PartialOrd + Copy,
+{
+    let mut out = vec![];
+    let mut i1 = 0;
+    let mut i2 = 0;
+    while i1 < list1.len() && i2 < list2.len() {
+        if list1[i1] < list2[i2] {
+            out.push(list1[i1]);
+            i1 += 1;
+        } else {
+            out.push(list2[i2]);
+            i2 += 1;
+        }
+    }
+    while i1 < list1.len() {
+        out.push(list1[i1]);
+        i1 += 1;
+    }
+    while i2 < list2.len() {
+        out.push(list2[i2]);
+        i2 += 1;
+    }
+    out
+}
+```
+
+### The Merge Sort Part
+
+***
+
+Now we can write the whole merge sort function.
+Merge sort should return the passed list if the size is less than 2.
+Otherwise it should split the list and call mergesort and both.
+Lastly calling merge and returning the resulting list.
+
+```rust
+pub fn merge_sort<T>(list: &Vec<T>) -> Vec<T>
+where
+    T: PartialOrd + Copy,
+{
+    //if vec is less than 2 in len we cant sort
+    if list.len() < 2 {
+        list.clone()
+    } else {
+        //split and mergesort each half
+        let middle = list.len() / 2;
+        let m1 = merge_sort(&list[..middle].to_vec());
+        let m2 = merge_sort(&list[middle..].to_vec());
+        merge(&m1, &m2)
+    }
+}
+```
+
+With that you now have a merge sort function ready to sort all of your vectors.
+The full code can be seen below
+
+```rust
+pub fn merge_sort<T>(list: &Vec<T>) -> Vec<T>
+where
+    T: PartialOrd + Copy,
+{
+    //if vec is less than 2 in len we cant sort
+    if list.len() < 2 {
+        list.clone()
+    } else {
+        //split and mergesort each half
+        let middle = list.len() / 2;
+        let m1 = merge_sort(&list[..middle].to_vec());
+        let m2 = merge_sort(&list[middle..].to_vec());
+        merge(&m1, &m2)
+    }
+}
+
+fn merge<T>(list1: &Vec<T>, list2: &Vec<T>) -> Vec<T>
+where
+    T: PartialOrd + Copy,
+{
+    let mut out = vec![];
+    let mut i1 = 0;
+    let mut i2 = 0;
+    while i1 < list1.len() && i2 < list2.len() {
+        if list1[i1] < list2[i2] {
+            out.push(list1[i1]);
+            i1 += 1;
+        } else {
+            out.push(list2[i2]);
+            i2 += 1;
+        }
+    }
+    while i1 < list1.len() {
+        out.push(list1[i1]);
+        i1 += 1;
+    }
+    while i2 < list2.len() {
+        out.push(list2[i2]);
+        i2 += 1;
+    }
+    out
+}
+```
+
+Full Code can be found at [https://github.com/PGIII/rust-algos/blob/main/src/merge_sort.rs](https://github.com/PGIII/rust-algos/blob/main/src/merge_sort.rs)
