@@ -1,9 +1,7 @@
 +++
 title = "Cross Compiling Rust Code"
-author ="Preston Garrison"
 summary = "How to cross compile for the Raspberry Pi Zero using the Rust Cross program"
 cover_image_url = "/post_assets/Linking_Rust_Module_With_C/rustacean-flat-happy.png"
-draft = false
 creation_date = 2023-09-01T15:03:28Z
 modified_date = 2023-09-01T15:04:57Z
 +++

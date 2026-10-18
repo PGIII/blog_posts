@@ -1,9 +1,7 @@
 +++
 title = "Embassy On ESP32"
-author ="Preston Garrison III"
 summary = "Creating a ESP32 Rust project that allows running Embassy Tasks"
 cover_image_url = "/post_assets/Linking_Rust_Module_With_C/rustacean-flat-happy.png"
-draft = false
 creation_date = 2024-04-24T18:26:01Z
 modified_date = 2024-04-24T18:26:01Z
 +++

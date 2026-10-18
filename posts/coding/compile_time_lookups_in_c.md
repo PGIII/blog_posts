@@ -1,9 +1,7 @@
 +++
 title = "Compile Time Lookups in C"
-author ="Preston Garrison"
 summary = "Implementing Compile Time Lookup Tables in C"
 cover_image_url = "/post_assets/256px-C_Programming_Language.svg.png"
-draft = false
 creation_date = 2023-08-25T17:29:38Z
 modified_date = 2023-08-25T17:29:38Z
 +++

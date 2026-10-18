@@ -1,6 +1,5 @@
 +++
 title = "Changing ESP32 Partition Map For Rust"
-author ="Preston Garrison III"
 summary = "Setting up espflash to use a custom parition table for ESP32 devices"
 cover_image_url = "/post_assets/Linking_Rust_Module_With_C/rustacean-flat-happy.png"
 draft = true

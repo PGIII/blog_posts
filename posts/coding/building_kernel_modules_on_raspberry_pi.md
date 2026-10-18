@@ -1,9 +1,7 @@
 +++
 title = "Building Kernel Modules On Raspberry Pi"
-author ="Preston Garrison"
 summary = "This post goes over basic setup to allow a raspberry pi to build kernel modules"
 cover_image_url = "/post_assets/raspi_logo.png"
-draft = false
 creation_date = 2023-08-28T22:29:49Z
 modified_date = 2023-08-28T22:41:59Z
 +++
